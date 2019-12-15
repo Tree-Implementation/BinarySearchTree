@@ -31,4 +31,31 @@ public class Tree {
         }
     }
 
+    public TreeNode get(int value){
+        if(root !=null){
+            return root.get(value);
+        }
+        else {
+            return null;
+        }
+    }
+
+    public int min(){
+        if(root != null){
+            return root.min();
+        }
+        else {
+            return Integer.MIN_VALUE;
+        }
+    }
+
+    public int max(){
+        if(root != null){
+            return root.max();
+        }
+        else {
+            return Integer.MAX_VALUE;
+        }
+    }
+
 }

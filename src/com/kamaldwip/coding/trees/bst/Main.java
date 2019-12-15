@@ -29,7 +29,13 @@ public class Main {
         System.out.println("Post Order Traversal is : ");
         demoTree.postOrderTraversal();
 
+        System.out.println();
 
+        System.out.println(demoTree.get(22));
+        System.out.println(demoTree.get(88));
+
+        System.out.println("Min value in Tree : "+demoTree.min());
+        System.out.println("Max value in Tree : "+demoTree.max());
 
     }
 }
