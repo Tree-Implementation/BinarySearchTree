@@ -15,11 +15,8 @@ public class Main {
         demoTree.insert(30);
         demoTree.insert(29);
         demoTree.insert(32);
+        demoTree.insert(17);
 
-        System.out.println("In Order Traversal is : ");
-        demoTree.inOrderTraversal();
-
-        System.out.println();
 
         System.out.println("Pre Order Traversal is : ");
         demoTree.preOrderTraversal();
@@ -36,6 +33,31 @@ public class Main {
 
         System.out.println("Min value in Tree : "+demoTree.min());
         System.out.println("Max value in Tree : "+demoTree.max());
+
+        System.out.println("In Order Traversal is : ");
+        demoTree.inOrderTraversal();
+
+        System.out.println();
+
+        demoTree.delete(15);
+        System.out.println("In Order Traversal is : ");
+        demoTree.inOrderTraversal();
+
+        System.out.println();
+
+        demoTree.delete(25);
+        System.out.println("In Order Traversal is : ");
+        demoTree.inOrderTraversal();
+
+        System.out.println();
+
+        demoTree.delete(22);
+        System.out.println("In Order Traversal is : ");
+        demoTree.inOrderTraversal();
+
+        System.out.println();
+
+
 
     }
 }

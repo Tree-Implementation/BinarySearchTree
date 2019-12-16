@@ -13,6 +13,45 @@ public class Tree {
         }
     }
 
+    public void delete(int value){
+        root = delete(root,value);
+    }
+
+    public TreeNode delete(TreeNode subTreeRoot, int value){
+        if(subTreeRoot == null) {
+            return null;
+        }
+        if(value < subTreeRoot.getData()){
+            subTreeRoot.setLeftChild(delete(subTreeRoot.getLeftChild(),value));
+        }
+        else if(value > subTreeRoot.getData()){
+            subTreeRoot.setRightChild(delete(subTreeRoot.getRightChild(),value));
+        }
+        else {
+            //Case 1 and Case 2 : Leaf Node and ONE child
+            if(subTreeRoot.getLeftChild() == null){
+                return subTreeRoot.getRightChild();
+            }
+            else if(subTreeRoot.getRightChild() == null){
+                return subTreeRoot.getLeftChild();
+            }
+            // Case 3 : TWO children
+            // Traversing along right subtree
+            subTreeRoot.setData(subTreeRoot.getRightChild().min());
+            subTreeRoot.setRightChild(delete(subTreeRoot.getRightChild(),subTreeRoot.getData()));
+
+            /*
+            Traversing along left subtree
+            subTreeRoot.setData(subTreeRoot.getLeftChild().max());
+            subTreeRoot.setLeftChild(delete(subTreeRoot.getLeftChild(),subTreeRoot.getData()));
+             */
+
+        }
+        return subTreeRoot;
+    }
+
+
+
     public void inOrderTraversal(){
         if(root != null){
             root.inOrderTraversal();
